@@ -68,10 +68,10 @@ public class Main{
 		head = ob.insert(head, 4);
 		head = ob.insert(head, 5);
 		pr.print(head);
-		head = ob.insert(head, 100, 2);
-		head = ob.insert(head, 101, 0);
-		head = ob.insert(head, 102, 4);
-		head = ob.insert(head, 103, 8);
+		head = ob.insert(head, 0, 2);
+		head = ob.insert(head, 0, 0);
+		head = ob.insert(head, 0, 4);
+		head = ob.insert(head, 0, 8);
 		pr.print(head);
 	}
 }
