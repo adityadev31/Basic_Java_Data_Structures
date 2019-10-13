@@ -9,10 +9,10 @@ class QuickSort{
     
     int partition(int arr[], int l, int r){
         int pivot = r;
-        int i = -1;
-        int j = 0;
+        int i = l-1;                    // behind l
+        int j = l;                      // stating from l 
         
-        for(j=0; j<r; j++){                  
+        for(j=l; j<r; j++){                  
             if(arr[j]<arr[pivot]){           // when smaller element is found -> swap otherwise j++ only
                 i++;
                 swap(arr, i, j);
