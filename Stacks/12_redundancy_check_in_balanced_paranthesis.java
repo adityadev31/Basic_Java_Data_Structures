@@ -50,10 +50,10 @@ class RedCheck{
                     pop();
                 }pop();
                 if(flag == 0)
-                    return false;
+                    return true;
             }
         }
-        return true;
+        return false;
     }
     
 }
@@ -64,9 +64,11 @@ public class Main{
 
      public static void main(String []args){
         
-        String str = "((a+b)+(c))";
+        String str = "((a+b)+c*d)";
         RedCheck ob = new RedCheck(str);
-        boolean result = ob.redundancyCheck(str);
-        System.out.println(result);
+        if(ob.redundancyCheck(str) == true)
+            System.out.println("Equation is redundant !!");
+        else
+            System.out.println("Equation is perfect !!");
      }
 }
