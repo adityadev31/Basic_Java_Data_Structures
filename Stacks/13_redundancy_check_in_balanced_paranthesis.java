@@ -1,3 +1,18 @@
+/*
+ALGO
+
+1) push all the elements of the expression till ')' closing bracket is found
+2) if ')' is found pop till '(' opening is found also pop '('
+3) meanwhile poping, also check if any operator is found or not
+4) if no operator is found then the brackets are redundant  --->  exit the loop
+5) if an operator is found then till then brackets are okay --->  continue the loop
+
+LOGIC:- brackets in a balanced expression is redundant if :-
+                                a) ((a+b))   
+                                b) ((a))
+        i.e, for an expression presence of an operator is crucial .. hence if while poping any operator is not found then --> redundant
+*/
+
 class RedCheck{
     
     int top, size;
