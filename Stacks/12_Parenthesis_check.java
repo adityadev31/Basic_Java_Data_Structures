@@ -50,9 +50,8 @@ public class Main{
         
         String str = "((a+b)+(c))";
         RedCheck ob = new RedCheck(str);
-        boolean result = ob.isMatching(str);
         
-        if(result == true)
+        if(ob.isMatching(str) == true)
             System.out.println("Parenthesis matched !!");
         else
             System.out.println("Parenthesis not matching !!");
