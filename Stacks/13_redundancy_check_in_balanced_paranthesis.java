@@ -26,15 +26,7 @@ class RedCheck{
         if(top != -1)
             top--;
     }
-    
-    
-    // print
-    void print(){
-        for(int i=0; i<=top; i++){
-            System.out.print(arr[i] + " ");
-        }
-    }
-    
+        
     
     // check redundancy
     boolean redundancyCheck(String expr){
