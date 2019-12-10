@@ -28,7 +28,7 @@ class ReverseNodes{
         DoubleNode temp = new DoubleNode();  // 1 -> 2 -> 3 -> 4 -> 5
         temp = reverse(head.next);           // 1 -> (2{temp.tail} <- 3 <- 4 <- 5{temp.head})  
         temp.tail.next = head;          
-        head.next = null;                    // 1 <- 2 <- 3 <- 4 <- 5
+        head.next = null;                    // null <- 1 <- 2 <- 3 <- 4 <- 5
         DoubleNode ans = new DoubleNode();
         ans.tail = head;            
         ans.head = temp.head;                // 1[ans.tail] <- 2 <- 3 <- 4 <- 5[ans.head]
