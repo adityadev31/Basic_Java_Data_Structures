@@ -23,6 +23,12 @@ public class Main
     }
     
     
+    /****
+    step-1 :- check for storage (if not present then store)
+    step-2 :- return the stored value
+    *****/
+	
+	
     public static int fibo(int n, int storage[]){ // strategy -> if values are already present in storage then no need to call the function
         if(n==0 || n==1){                         // B A S E  C A S E 
             if(storage[n]==-1)                    // check if present in storage or not ... if not present then put the value in storage
