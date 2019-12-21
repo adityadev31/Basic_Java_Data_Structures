@@ -9,10 +9,10 @@ public class Main{
         if(n<=1)
             return 0;
             
-        int op1 = count2one(n-1);              // option 1
-        int minCounts = 1 + op1;
+        int op1 = 1 + count2one(n-1);           // option 1
+        int minCounts = op1;
         
-        if(n % 3 == 0){                        // option 2
+        if(n % 3 == 0){                         // option 2
             int op2 = 1 + count2one(n/3);
             if(op2<minCounts)
                 minCounts = op2;
