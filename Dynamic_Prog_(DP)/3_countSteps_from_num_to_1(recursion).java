@@ -28,6 +28,6 @@ public class Main{
     }
     
     public static void main(String args[]){
-        System.out.println(count2one(10));
+        System.out.println(count2one(10));   // solution   10 -> 9 -> 3 -> 1 (3 steps)
     }
 }
