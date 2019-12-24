@@ -9,10 +9,6 @@ import java.lang.Math;
 public class Main
 {
     
-    public static int rooter(double n){
-        return (int)Math.sqrt(n);
-    }
-    
     public static int sqSum(int n){
         
         // B A S E  C A S E 
@@ -38,7 +34,7 @@ public class Main
             return min of all the opts
         */
             
-        int numOfOpts = rooter(n);
+        int numOfOpts = (int)Math.sqrt(n);
         int minSol = -1;
         for(int i=1; i<=numOfOpts; i++){
             
@@ -50,6 +46,6 @@ public class Main
     }
     
 	public static void main(String[] args) {
-        System.out.println("min integers req are: \t" + sqSum(10));		
+        System.out.println("min integers req are: \t" + sqSum(20));		
 	}
 }
