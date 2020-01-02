@@ -1,25 +1,21 @@
-import java.lang.Math;
 import java.util.*;
 
 public class Main{
-    
-    
-    public static boolean[] primes(int num){    // prime no. = true else false (from i=0, i<= num)
-        
-        boolean storage[] = new boolean[num + 1];
-        
+
+
+    public static ArrayList<Boolean> isPrime(int num){
+        ArrayList<Boolean> primesList = new ArrayList<>();
         for(int i=0; i<=num; i++){
             int flag = 1;
             for(int j=2; j*j<=i; j++){
-                
                 if(i<2){
-                    storage[i] = false;
+                    primesList.add(false);
                     flag = 0;
                     break;
                 }
-                else if(i == 2){
-                    storage[i] = true;
+                else if(i==2){
                     flag = 0;
+                    primesList.add(true);
                     break;
                 }
                 else if(i%j == 0){
@@ -28,40 +24,36 @@ public class Main{
                 }
             }
             if(flag != 0){
-                storage[i] = true;
+                primesList.add(true);
             }
+            else    
+                primesList.add(false);
         }
-        return storage;
+        return primesList;
     }
-    
-    
-    public static ArrayList<Integer> primeFact(int num){    // check only till {sqrt(num)+1} (+ 1 is to be in safe side)
+
+
+    public static ArrayList<Integer> primeFactor(int num){
+        ArrayList<Boolean> prime = isPrime(num);
         ArrayList<Integer> ans = new ArrayList<>();
-        boolean primes[] = primes(num);
         int rem = num;
-        while(rem != 1){
-            int j=2;
-            while(j <= num){
-                if(rem%j == 0 && primes[j] == true){
-                    rem = rem/j;
-                    ans.add(j);
-                }
-                else
-                    j++;
+        int i=2;
+        while(i<=num && rem!=1){
+            if(rem%i == 0 && prime.get(i) == true){
+                ans.add(i);
+                rem = rem/i;
             }
-            if(j>num && rem!=1){
-                rem = 1;
-                ans.add(num);
-            }
+            else{ i++; }
         }
         return ans;
     }
-    
-    
-    public static void main(String args[]){
-        int num = 376;
-        ArrayList<Integer> ans = primeFact(num);
+
+
+    public static void main (String[] args) {
+        int num = 102;
+        ArrayList<Integer> ans = primeFactor(num);
         System.out.print(ans);
     }
+    
     
 }
