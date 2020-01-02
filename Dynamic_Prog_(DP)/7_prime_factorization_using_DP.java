@@ -1,9 +1,9 @@
 
-/**
+/*
  * 
- *          P R I M E  F A C T O R I Z A T I O N  U S I N G   D P
+ *          P R I M E   F A C T O R I Z A T I O N   U S I N G   D P
  * 
- * /
+ */
 
 
 public class Main
@@ -59,7 +59,8 @@ public class Main
     
     
 	public static void main(String[] args) {
-		System.out.println("Hello World");
-		primeFact(20);
+	    int num = 20;
+		System.out.print("Prime Fact of " + num + " is:   ");
+		primeFact(num);
 	}
 }
