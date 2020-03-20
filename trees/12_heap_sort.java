@@ -66,7 +66,7 @@ class MyHeap{
                 min_index = getRightChildIndex(start);
             if(x[start]>x[min_index]){
                 swap(start, min_index);
-                start = min_index;
+                start = min_index;              // updating start to move downwards
             }
             else
                 break;
