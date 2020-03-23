@@ -27,9 +27,17 @@ public class Main{
         int size = 5;
         int matrix[][] = new int[size][size];
         matrix[0][1]=1;
-        matrix[1][2]=1;
+        matrix[1][0]=1;
+        matrix[0][2]=1;
         matrix[2][0]=1;
+        matrix[0][3]=1;
+        matrix[3][0]=1;
+        matrix[1][4]=1;
+        matrix[4][1]=1;
+        matrix[2][4]=1;
+        matrix[4][2]=1;
         matrix[3][4]=1;
+        matrix[4][3]=1;
         // graph is ready
         
         // printing graph
@@ -39,5 +47,5 @@ public class Main{
 
 
 
-//  given graph is 0-1 1-2 2-0 3-4
-//  output         0 1 2 3 4
+//  given graph is 0-1 0-2 0-3 1-4 2-4 3-4
+//  output         0 1 4 2 3
