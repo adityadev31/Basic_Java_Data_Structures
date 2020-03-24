@@ -23,3 +23,6 @@ public class Main{
         System.out.println(count(11));
     }
 }
+
+
+// ans = 4
