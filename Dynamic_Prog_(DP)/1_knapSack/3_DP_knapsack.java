@@ -26,8 +26,6 @@ public class Main {
             for(int j=0; j<=leftSpace; j++){
                 if(i==0 || j==0)
                     store[i][j] = 0;
-                else
-                    store[i][j] = -1;
             }
         }
         return knapsack(wts, vals, leftSpace, n, store);
