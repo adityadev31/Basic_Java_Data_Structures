@@ -1,6 +1,7 @@
 /**
 
-problem statement - find whether it is possible to make sum of selected numbers from the array same as the given sum (same as knapsack - we have choice whether to select no. from the array or not)
+problem statement - find whether it is possible to make sum of selected numbers from the array same as the given sum 
+(same as knapsack - we have choice whether to select no. from the array or not)
 
 **/
 
