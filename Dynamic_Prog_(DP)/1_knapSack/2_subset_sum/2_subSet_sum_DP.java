@@ -25,8 +25,10 @@ public class Main {
         for(int i=0; i<=n; i++){
             for(int j=0; j<=sumLeft; j++){
                 if(i==0 && j==0){ store[i][j]=true; }
-                if(j==0){ store[i][j]=true; }
-                if(i==0){ store[i][j]=false; }
+                else{
+                    if(j==0){ store[i][j]=true; }
+                    if(i==0){ store[i][j]=false; }
+                }
             }
         }
         return ans(arr, sumLeft, n, store);
