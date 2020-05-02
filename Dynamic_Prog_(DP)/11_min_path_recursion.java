@@ -2,33 +2,27 @@ import java.util.*;
 
 public class Main {
     
-    
-    public static int findMinPath(int[][] maze, int i, int j, int rows, int cols){
-        if(i==rows-1 && j==cols-1){  return maze[i][j]; }   // base case
-        if(i>=rows || j>=cols){ return Integer.MAX_VALUE; } // base case
-        int horiz = findMinPath(maze, i+1, j, rows, cols);
-        int verti = findMinPath(maze, i, j+1, rows, cols);
-        int diago = findMinPath(maze, i+1, j+1, rows, cols);
-        int min = horiz;
-        min = min<verti ? min:verti;
-        min = min<diago ? min:diago;
-        return maze[i][j]+min;
-    }
-    
-    public static int findMinPath(int[][] maze){
-        int rows = maze.length;
-        int cols = maze[0].length;
-        return findMinPath(maze, 0, 0, rows, cols);
+    public static int findMinPath(int[][] arr, int row, int col){
+        if(row<0 || col<0){ return Integer.MAX_VALUE; }            // base case 
+        if(row==0 && col==0){ return arr[row][col]; }              // base case (if array size =1 then return that array)
+        int op1 = findMinPath(arr, row-1, col);                    // up
+        int op2 = findMinPath(arr, row, col-1);                    // left
+        int op3 = findMinPath(arr, row-1, col-1);                  // up-left
+        int min = op1<op2?op1:op2;
+        min = min<op3?min:op3;
+        return arr[row][col] + min;                       
     }
     
     public static void main(String[] args) throws Exception {
-        int[][] maze = {
-            {1,1,1},
-            {4,5,2},
-            {7,8,9},
+        int[][] arr = {
+            {1,3,6,2},
+            {6,2,7,3},
+            {6,2,3,1}
         };
-        System.out.print("Minimum path = " + findMinPath(maze));
+        int row = arr.length-1;
+        int col = arr[0].length-1;
+        System.out.println("Min path = " + findMinPath(arr, row, col));
     }
 }
 
-// ans = 13 ==> 1->1->2->9
+// ans = 7 (1->2->3->1 = 7)
