@@ -1,3 +1,12 @@
+/**
+
+problem statement - find whether it is possible to make sum of selected numbers from the array same as the given sum (same as knapsack - we have choice whether to select no. from the array or not)
+
+**/
+
+
+
+
 import java.util.*;
 
 public class Main {
@@ -20,4 +29,4 @@ public class Main {
     }
 }
 
-// ans = true
+// ans = true   (8+1+5=14)
