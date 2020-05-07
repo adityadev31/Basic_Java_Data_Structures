@@ -2,7 +2,7 @@
 
     we have to make 2 subsets of an array such that the absolute of their difference = minimum
     
-    NOTE - if S1 = S2 then difference = 0 (for this, s1 = sum of all the elements of the original array)
+    NOTE - if S1 = S2 then difference = 0 (for this, s1 = sum of all the elements of the original array/2)
     
     so :-
     
