@@ -1,5 +1,5 @@
 /**
-quest - we have o find the number of subsets that can be formed have sum of their elements = given no. (sum)
+quest - we have to find the number of subsets that can be formed having sum of their elements = given no. (sum)
 **/
 
 import java.util.*;
