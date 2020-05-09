@@ -45,3 +45,5 @@ public class Main {
         System.out.println("ans = " + ans(arr, sum, arr.length));
     }
 }
+
+// ans = 3
