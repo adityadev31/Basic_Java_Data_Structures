@@ -21,11 +21,11 @@ public class Main {
     public static int ans(int[] arr, int sum, int n, int[][] store){
         for(int i=1; i<=n; i++){
             for(int j=1; j<=sum; j++){
-                if(arr[i-1]>j){ store[i][j]=store[i-1][j]; }
+                if(arr[i-1]>j){ store[i][j]=store[i-1][j]; } // current num > sum --> not selected
                 else{
-                    int op1 = store[i-1][j];
-                    int op2 = store[i-1][j-arr[i-1]];
-                    store[i][j] = op1+op2;
+                    int op1 = store[i-1][j];                 // not selected
+                    int op2 = store[i-1][j-arr[i-1]];        // selected
+                    store[i][j] = op1+op2;                   // both selected and non selected
                 }
             }
         }return store[n][sum];
