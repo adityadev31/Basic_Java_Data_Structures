@@ -33,11 +33,11 @@ public class Main {
     }
     
     public static void main(String[] args) throws Exception {
-        int[] len = {1,2,3,4,5,6,7,8};                    // pieces lengths
-        int[] price = {100, 200, 90, 50, 80, 40, 150, 70};
-        int rodLen = 8;                                   // rod of length 8 (initially given)
+        int[] len = {1,2,3,4};                    // pieces lengths
+        int[] price = {100, 300, 90, 50};
+        int rodLen = 4;                                   // rod of length 8 (initially given)
         System.out.println("Ans = " + rodProb(len, price, rodLen, len.length));
     }
 }
 
-// ans = 800
+// ans = 600 (2+2)-->300+300
