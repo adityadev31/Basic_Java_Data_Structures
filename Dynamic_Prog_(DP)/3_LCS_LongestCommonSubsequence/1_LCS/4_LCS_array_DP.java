@@ -17,7 +17,7 @@ public class Main {
                 else{
                     int op1 = store[i][j-1];             // keeping s1 char and leaving s2 char
                     int op2 = store[i-1][j];             // keeping s1 char and leaving s2 char
-                    store[i][j] = (op1>op2)?op1:op2;
+                    store[i][j] = (op1>op2)?op1:op2;     // keeping maximum length
                 }
             }
         }return store[n][m];
