@@ -1,6 +1,7 @@
 /**
 
-Longest Common Subsequence (LCS) - Aditya Hurditya = 5(ditya)
+Longest Common Subsequence (LCS) - Aditya Hurditya = 5(ditya) 
+NOTE- continuity doesn't matter
 Using String and Recursion
 
 **/
