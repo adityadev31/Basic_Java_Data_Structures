@@ -43,4 +43,4 @@ public class Main {
     }
 }
 
-// ans = 9
+// ans = 9  (6+7-4)
