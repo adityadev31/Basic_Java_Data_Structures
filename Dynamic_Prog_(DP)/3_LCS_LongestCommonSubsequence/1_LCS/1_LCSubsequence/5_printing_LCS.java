@@ -49,10 +49,10 @@ public class Main {
     
     public static void main(String[] args) throws Exception {
         String s1 = "aditya";
-        String s2 = "hurditya";
+        String s2 = "haurditya";
         System.out.println(LCS(s1, s2, s1.length(), s2.length()));
     }
 }
 
 
-// ans --> ditya
+// ans --> aditya
