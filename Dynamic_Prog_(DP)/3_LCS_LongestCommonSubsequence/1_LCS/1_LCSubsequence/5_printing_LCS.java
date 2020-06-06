@@ -10,7 +10,7 @@ public class Main {
                 else{ store[i][j] = 1+store[i-1][j-1]; }
             }
         }
-        int lcsLen = store[n][m];
+     
         // printing
         String result = "";
         StringBuilder result1 = new StringBuilder(); 
