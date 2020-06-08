@@ -24,15 +24,15 @@ public class Main {
     
     public static int MCM(int[] arr, int i, int j){
         if(i>=j){ return 0; }
-        int mn = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         for(int k=i; k<j; k++){
             int op1 = MCM(arr, i, k);
             int op2 = MCM(arr, k+1, j);
             int op3 = arr[i-1]*arr[k]*arr[j];
             int sum = op1+op2+op3;
-            if(sum < mn){ mn = sum; }
+            if(sum < min){ min = sum; }
         }
-        return mn;
+        return min;
     }
     
     public static void main(String[] args) throws Exception {
