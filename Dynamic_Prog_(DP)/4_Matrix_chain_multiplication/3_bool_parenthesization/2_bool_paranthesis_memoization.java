@@ -26,7 +26,7 @@ public class Main{
         }
         
         
-        String temp = "";
+        String temp = "";                            // checking map before recursion call
         temp = String.valueOf(i) + " " + String.valueOf(j) + " " + String.valueOf(isTrue);
         if(map.containsKey(temp)){ return map.get(temp); }
         
