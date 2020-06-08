@@ -28,7 +28,7 @@ public class Main {
         for(int k=i; k<j; k++){
             int op1 = MCM(arr, i, k);
             int op2 = MCM(arr, k+1, j);
-            int op3 = arr[i-1]*arr[k]*arr[j];
+            int op3 = arr[i-1]*arr[k]*arr[j];    // starting * common * end
             int sum = op1+op2+op3;
             if(sum < min){ min = sum; }
         }
