@@ -17,7 +17,7 @@ public class Main {
                     j++;                                    // finally j will become one less hence j++
                     int mover = i;
                     while(mover>j){
-                        arr[mover] = arr[mover-1];
+                        arr[mover] = arr[mover-1];          // shifting left to right
                         mover--;
                     }
                     arr[j] = temp;
