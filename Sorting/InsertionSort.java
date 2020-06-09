@@ -2,12 +2,6 @@ import java.util.*;
 
 public class Main {
     
-    public static void swap(int arr[], int i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-    
     public static void main(String[] args) throws Exception {
         int arr[] = {3,2,5,4,1};
         
