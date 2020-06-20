@@ -1,3 +1,5 @@
+// checking before every recursive call
+
 import java.util.*;
 
 public class Main {
