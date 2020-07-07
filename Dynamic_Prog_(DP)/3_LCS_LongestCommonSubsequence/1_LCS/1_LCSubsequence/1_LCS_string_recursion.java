@@ -32,3 +32,30 @@ public class Main {
 }
 
 // ans = 5
+
+
+
+/**
+
+same code (but smaller)
+
+import java.util.*;
+
+public class Main {
+    
+    public static int LCS(String s1, String s2, int m, int n){
+        if(m == 0 || n == 0) return 0;                                            // base case m=0 or n=0  -->  ans = 0
+        if(s1.charAt(m-1) == s2.charAt(n-1)) return 1 + LCS(s1, s2, m-1, n-1);    // starting from last char of both (if mathes --> +1 and move both)
+        return Math.max(LCS(s1, s2, m, n-1), LCS(s1, s2, m-1, n));                // if not match --> max of (move 1, move 2)
+    }
+    
+    public static void main(String[] args) throws Exception {
+        String s1 = "aditya";
+        String s2 = "hurditya";
+        System.out.println(LCS(s1, s2, s1.length(), s2.length()));
+    }
+}
+
+
+
+**/
