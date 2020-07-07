@@ -8,7 +8,7 @@ public class Main {
         if(egg == 1) return floor;                     // base case
         int min = Integer.MAX_VALUE;
         for(int k=1; k<=floor; k++){                   // partition
-            int temp = 1 + Math.max(EGG(egg-1, k-1), EGG(egg, floor-k));   // max coz worst case is asked
+            int temp = 1 + Math.max(EGG(egg-1, k-1), EGG(egg, floor-k));   // max coz worst case is asked    ( part1 = break -> egg reduce and lower floors,  part2 = not break --> egg same, upper floors)
             min = Math.min(temp, min);                                     // min coz min no. of attempts is asked
         }
         return min;
