@@ -8,7 +8,7 @@ Using String and Recursion
 
 
 import java.util.*;
-import java.lang.Math;
+
 public class Main {
 
     public static int LCS(String s1, String s2, int n, int m){
@@ -40,7 +40,7 @@ public class Main {
 same code (but smaller)
 
 import java.util.*;
-
+import java.lang.Math;
 public class Main {
     
     public static int LCS(String s1, String s2, int m, int n){
