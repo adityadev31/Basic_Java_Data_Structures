@@ -1,3 +1,14 @@
+/**
+
+Dynamic Programming – Egg Dropping Problem
+Objec­tive:  There are n number of eggs and building which has k floors. 
+            Write an algorithm to find the minimum number of drops is required to know the floor from which if the egg is dropped, it will break in worst case.
+            Inshort - minimum attempts in worst case
+
+**/
+
+
+
 import java.util.*;
 import java.lang.Math;
 
