@@ -7,7 +7,9 @@ public class Main{
         map.put("c", 10);
         map.put("b", 30);
         System.out.println(map.keySet());
+        System.out.println(map.entrySet());
     }
 }
 
-// [a, c, b]
+// [a, b, c]
+// [a=20, b=30, c=10]
