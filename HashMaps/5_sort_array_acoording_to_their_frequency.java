@@ -15,7 +15,7 @@ public class Main {
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>(){
             public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2){
                 int n = e2.getValue() - e1.getValue();
-                if(n == 0) return e1.getKey()-e2.getKey();
+                if(n == 0) return e1.getKey()-e2.getKey();   // if same freq then select lower key 
                 return n;
             }
         });
