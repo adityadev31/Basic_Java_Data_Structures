@@ -27,8 +27,7 @@ import java.util.*;
     Collections.sort(list, new Comparator<Student>(){
       @Override
       public int compare(Student a, Student b){
-        return a.gpa.compareTo(b.gpa);       // as
-cending
+        return a.gpa.compareTo(b.gpa);       // ascending
       }
     });
     
