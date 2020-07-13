@@ -41,6 +41,13 @@ public class Main {
     }
 }
 
-// ans = 7
+//    ans = 7
+
+/*
+     int coins[] = {5,5,7,10};
+     int sum = 13;
+     then ans  =  -1
+*/
+
 //    we have filled min int i=0 coz we have to find max        see if we had to find min then we would fill it with max
  
