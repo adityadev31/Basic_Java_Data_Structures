@@ -23,8 +23,8 @@ public class Main{
     
     public static int coinProb(int[] coins, int sum, int n){
         int store[][] = new int[n+1][sum+1];
-        for(int j=0; j<=sum; j++){ store[0][j] = 0; }    // if sum=0 then always their is a way (i.e. empty set hence 1)
-        for(int i=0; i<=n; i++){ store[i][0] = 1; }      // if there is no coin then there's no way (i.e. 0)
+        for(int j=0; j<=sum; j++){ store[0][j] = 0; }    // if there is no coin then there's no way (i.e. 0)
+        for(int i=0; i<=n; i++){ store[i][0] = 1; }      // if sum=0 then always their is a way (i.e. empty set hence 1)
         return coinProb(coins, sum, n, store);
     }
     
