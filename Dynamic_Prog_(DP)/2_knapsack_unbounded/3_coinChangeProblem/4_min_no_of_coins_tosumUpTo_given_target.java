@@ -29,7 +29,7 @@ public class Main {
     
     public static int minCoins(int[] arr, int n, int sum){
         int[][] store = new int[n+1][sum+1];
-        for(int j=0; j<=sum; j++) store[0][j] = Integer.MAX_VALUE-n; // if no items then min req coins = max_int **
+        for(int j=0; j<=sum; j++) store[0][j] = Integer.MAX_VALUE-n; // if no items then min req coins = max_int **    rest same as unbounded problems
         for(int i=0; i<=n; i++) store[i][0] = 0;                     // sum = 0  then min req coins = 0
         return minCoins(arr, n, sum, store);
     }
