@@ -44,6 +44,10 @@ public class Main {
 /*
 		int[] len = {5,5,2,7};  and  sum = 7
 		then ans = 2 --> 5+2=7
+		
+		int len[] = {5,5,2,7};
+        	int sum = 50;
+		then ans = 25 --> 2*25 = 50
 */
 
 //    we have filled min int i=0 coz we have to find max        see if we had to find min then we would fill it with max
