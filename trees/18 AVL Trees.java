@@ -42,7 +42,7 @@ public class Main {
         preorder(root.right);
     }
     
-    
+    // A V L  Function
     public static Node AVL(int[] arr, int l, int r){     // mids are the roots 
         if(l>r) return null;
         int m = (l+r)/2;
