@@ -81,3 +81,13 @@ public class Main {
         preorder(root);             // preorder
     }
 }
+
+
+
+/**
+
+    1 2 3 4 5 6 7 8 9 
+    2 1 4 7 8 6 9 5 3 
+    3 1 2 5 4 9 6 8 7 
+
+**/ 
