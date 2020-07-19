@@ -114,3 +114,12 @@ public class Main {
         System.out.println("predecessor of 5 - " + predecessor(root, 5));
     }
 }
+
+/**
+
+1 2 3 4 5 6 7 8 
+
+predecessor of 8 - 7
+predecessor of 5 - 4
+
+**/
