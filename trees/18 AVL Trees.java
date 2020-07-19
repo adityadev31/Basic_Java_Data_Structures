@@ -14,6 +14,30 @@
                     - root = mid
                     - root.left = recursiveCall(0, mid-1)
                     - root.right = recursiveCall(mid+1, r);
+                    
+         example  - arr[] = {3,2,1,7,4,5,6};
+         
+         BST -     3
+                 /   \
+                2     7     <--   for this node 7  (left - right) = (3 - 0) = 3 hence not balanced
+               /     /
+              1     4
+                     \
+                      5
+                       \
+                        6
+
+        Sorted -    1 2 3 (4) 5 6 7    4=mid=root
+        
+        step1   -     4
+                    /   \
+                1(2)3   5(6)7      2=mid of left subtree   6 is the mid of right subtree 
+                  
+        step2   -      4
+                     /   \
+                    2     6
+                   / \   /  \
+                  1   3 5    7     now its perfectly balanced subtree
 
 
 **/
@@ -46,9 +70,9 @@ public class Main {
     public static Node AVL(int[] arr, int l, int r){     // mids are the roots 
         if(l>r) return null;
         int m = (l+r)/2;
-        Node root = new Node(arr[m]);
-        root.left = AVL(arr, l, m-1);
-        root.right = AVL(arr, m+1, r);
+        Node root = new Node(arr[m]);     // setting middle element as the root of the current tree
+        root.left = AVL(arr, l, m-1);     // calling for the left subtree
+        root.right = AVL(arr, m+1, r);    // calling for the right subtree
         return root;
     }
     
