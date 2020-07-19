@@ -1,6 +1,6 @@
 /**. Sum from root to a node
   
-  using pre order traversal
+  using inorder traversal
   
   step1 - sum+=root.data , push root to stack
   
@@ -46,7 +46,7 @@ import java.util.*;
      while(!st.empty()) System.out.print(st.pop().data+" ");
    }
    
-   public static void findPathSum(Node root, int target){
+   public static void findPathSum(Node root, int target){    // inorder trav format
      if(root == null) return;     // base case
      
      sum += root.data;                 // add sum
