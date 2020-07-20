@@ -61,7 +61,7 @@ class GfG
         return head;
     }
     
-    Node bToDLL(Node root)
+    Node bstToDLL(Node root)
     {
 	    if(root == null) return root;
 	    return preOrder(root);
