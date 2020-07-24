@@ -3,6 +3,8 @@
 /**
 
 
+// N O T E - SAME AS BOTTOM VIEW AND VIRTICAL VIEW... insert in map for only the first occurance of HD. sort according to HD.
+
 You are given a pointer to the root of a binary tree. Print the top view of the binary tree.
 Top view means when you look the tree from the top the nodes, what you will see will be called the top view of the tree. See the example below.
 You only have to complete the function.
