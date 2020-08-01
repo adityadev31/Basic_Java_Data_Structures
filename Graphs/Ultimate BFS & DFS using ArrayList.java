@@ -79,7 +79,7 @@ public class Main {
         // initializing adjacent list
         int v = 7;
         adjacent = new ArrayList<ArrayList<Integer>>(v);
-        for(int i=0; i<v; i++) adjacent.add(new ArrayList<Integer>());
+        for(int i=0; i<v; i++) adjacent.add(new ArrayList<Integer>());  // initializing arraylists
         
         // adding edges
         addEdges(adjacent, 1, 6);
