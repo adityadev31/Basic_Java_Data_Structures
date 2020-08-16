@@ -53,3 +53,18 @@ public class Main{
     }
     
 }
+
+
+/**
+
+source = 0, destination = 1 weight = 4
+source = 0, destination = 2 weight = 3
+source = 1, destination = 3 weight = 2
+source = 1, destination = 2 weight = 5
+source = 2, destination = 3 weight = 7
+source = 3, destination = 4 weight = 2
+source = 4, destination = 0 weight = 4
+source = 4, destination = 1 weight = 4
+source = 4, destination = 5 weight = 6
+
+**/
