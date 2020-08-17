@@ -69,7 +69,7 @@ public class Main {
             p2 = i;
             if(p1 != p2){
                 pathSum += x.w;
-                parent[x.v] = p1;
+                parent[x.v] = p1;      // making parent of node1 as parent of node2 as they are now connected
                 
                 // print krushkal
                 System.out.println("u: " + x.u + ", v: " + x.v + ", w: " + x.w);
