@@ -60,16 +60,12 @@ public class Main {
         System.out.println("\nPrinting Krushkal...");
         while(!pq.isEmpty()){
             Edge x = pq.poll();
-            int p1, p2;
-            int i = x.u;
+            int i=x.u, j=x.v;
             while(parent[i]!=i && i<vertices && i>=0) i = parent[i];
-            p1 = i;
-            i = x.v;
-            while(parent[i]!=i && i<vertices && i>=0) i = parent[i];
-            p2 = i;
-            if(p1 != p2){
+            while(parent[j]!=j && j<vertices && j>=0) j = parent[j];
+            if(i != j){
                 pathSum += x.w;
-                parent[x.v] = p1;      // making parent of node1 as parent of node2 as they are now connected
+                parent[i] = j;      // making 1st node's parent = 2nd node parent
                 
                 // print krushkal
                 System.out.println("u: " + x.u + ", v: " + x.v + ", w: " + x.w);
