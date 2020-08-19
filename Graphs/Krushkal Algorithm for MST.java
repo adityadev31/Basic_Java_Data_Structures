@@ -1,3 +1,29 @@
+/**
+
+A L G O R I T H M - 
+
+Step1 - sort all the edges according to their weights (use priority queue);
+
+Step2 - make a parent array to keep a check whether sorce and destination nodes have same or different parents. (initially every node is parent of itself)
+
+Step3 - loop till pq doesn't become empty
+
+      - a) extract element from pq 
+      - b) check whether u & v of that element have same parent or not (while loops are used for both u's and v's parent check)
+      - c) if(parentOfU != parentOfV) --> edge can be selected
+            - make parentOfU = parentOfV
+            - print u v & w
+            - pathsum += weight of the element
+
+
+**/
+
+
+
+
+
+
+
 import java.util.*;
 
 public class Main {
@@ -63,7 +89,7 @@ public class Main {
             int i=x.u, j=x.v;
             while(parent[i]!=i && i<vertices && i>=0) i = parent[i];
             while(parent[j]!=j && j<vertices && j>=0) j = parent[j];
-            if(i != j){
+            if(i != j){                             // i!=j ---> different parents -->  no loop
                 pathSum += x.w;
                 parent[i] = j;      // making 1st node's parent = 2nd node parent
                 
