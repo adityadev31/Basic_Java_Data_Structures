@@ -1,5 +1,8 @@
 /*
 
+M S T - connects all the nodes once with min dist
+
+
 A L G O R I T H M -
 
 DS req-
@@ -125,6 +128,21 @@ public class Main {
         prims(graph, vertices);
     }
 }
+
+
+/*                  4
+                1-------4
+               /|\      |\
+             4/ | \3    | \7
+             /  |  \    |  \
+            0  6|   \  2|   5
+             \  |    \  |  / 
+             6\ |     \ | /3
+               \|      \|/
+                2-------3
+                    1
+*/
+
 
 
 /*
