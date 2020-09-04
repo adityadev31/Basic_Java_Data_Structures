@@ -1,24 +1,16 @@
 /*
-
 M S T - connects all the nodes once with min dist
-
-
 A L G O R I T H M -
-
 DS req-
 weight[] = {0, inf, inf, inf, inf, inf};
 parent[] = {-1, , , , , };
 visited set = []
-
-
 Step1 - select the vertex with min weight[] && also not visited
 Step2 - make that min vertex visited
 Step3 - find all the adjacents which are (not visited && their edge weights with that vertex as source are < their current weight[] ){
             weight[edge.v] = edge.w;
             parent[edge.v] = edge.u;
         }
-
-
 */
 
 
@@ -99,15 +91,10 @@ public class Main {
         }
         int pathSum = 0;
         System.out.println("Printing Prims...");
-        for(int i=1; i<vertices; i++){
-            int s = parent[i];
-            int d = i;
-            for(Edge e : graph.list.get(s)){
-                if(e.v == d){
-                    pathSum += e.w;
-                    System.out.println("u: " + s + ", v: " + d + ", w: " + e.w);
-                }
-            }
+        for(int d=1; d<vertices; d++){           // d = destination, s = source
+            int s = parent[d];
+            pathSum += weight[d];
+            System.out.println("u: " + s + ", v: " + d + ", w: " + weight[d]);
         }
         System.out.println("\nPathSum : " + pathSum);
     }
@@ -147,13 +134,11 @@ public class Main {
 
 /*
 output - 
-
 Printing Prims...
 u: 0, v: 1, w: 4
 u: 3, v: 2, w: 1
 u: 1, v: 3, w: 3
 u: 3, v: 4, w: 2
 u: 3, v: 5, w: 3
-
 PathSum : 13
 */
