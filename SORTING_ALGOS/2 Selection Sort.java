@@ -7,7 +7,6 @@ public class Main {
     public static void selectionSort(int[] arr, int n){
         int temp = 0;
         for(int i=0; i<n-1; i++){
-            swapped = false;
             for(int j=i+1; j<n; j++){
                 if(arr[j]<arr[i]){
                     temp = arr[i];
