@@ -6,7 +6,6 @@ public class Main {
     
     public static void selectionSort(int[] arr, int n){
         int temp = 0;
-        boolean swapped;
         for(int i=0; i<n-1; i++){
             swapped = false;
             for(int j=i+1; j<n; j++){
@@ -14,7 +13,6 @@ public class Main {
                     temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
-                    swapped = true;
                 }
             }
         }
