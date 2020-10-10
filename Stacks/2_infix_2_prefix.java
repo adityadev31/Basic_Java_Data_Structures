@@ -1,70 +1,85 @@
-import java.util.Stack;
-public class InfixToPreFix {
-    static int precedence(char c){
-        switch (c){
+
+/*
+
+same as infix -> postfix
+
+step1 => reverse the expression
+step2 => apply infix -> postfix [ ')' => push  '(' => pops ]  reverse of prefix
+step3 => reverse the result
+
+
+*/
+
+
+
+
+
+import java.util.*;
+
+public class Main{
+    
+    public static int precedence(char c){
+        switch(c){
             case '+':
             case '-':
                 return 1;
+                
             case '*':
             case '/':
                 return 2;
+                
             case '^':
                 return 3;
         }
         return -1;
     }
-
-    static StringBuilder infixToPreFix(String expression){
-
-        StringBuilder result = new StringBuilder();
-        StringBuilder input = new StringBuilder(expression);
-        input.reverse();
-        Stack<Character> stack = new Stack<Character>();
-
-        char [] charsExp = new String(input).toCharArray();
-        for (int i = 0; i < charsExp.length; i++) {
-
-            if (charsExp[i] == '(') {
-                charsExp[i] = ')';
-                i++;
+    
+    public static String postfix(String exp){
+        StringBuilder sb = new StringBuilder();
+        char c[] = sb.append(exp).reverse().toString().toCharArray();
+        Stack<Character> st = new Stack<>();
+        String result = "";
+        
+        for(int i=0; i<c.length; i++){
+            
+            // ====== step1 ========  operator
+            if(precedence(c[i])>0){
+                while(!st.empty() && precedence(st.peek())>=precedence(c[i])) result += st.pop();
+                st.push(c[i]);
             }
-            else if (charsExp[i] == ')') {
-                charsExp[i] = '(';
-                i++;
+            
+            // ====== step2 ======== )
+            else if(c[i] == ')') st.push(c[i]);
+            
+            // ====== step3 ======== (
+            else if(c[i] == '('){
+                while(!st.empty() && st.peek()!=')') result += st.pop();
+                st.pop();
             }
+            
+            // ====== step4 ======== alphabets
+            else result += c[i];
+            
         }
-        for (int i = 0; i <charsExp.length ; i++) {
-            char c = charsExp[i];
-
-            //check if char is operator or operand
-            if(precedence(c)>0){
-                while(stack.isEmpty()==false && precedence(stack.peek())>=precedence(c)){
-                    result.append(stack.pop());
-                }
-                stack.push(c);
-            }else if(c==')'){
-                char x = stack.pop();
-                while(x!='('){
-                    result.append(x);
-                    x = stack.pop();
-                }
-            }else if(c=='('){
-                stack.push(c);
-            }else{
-                //character is neither operator nor "("
-                result.append(c);
-            }
-        }
-
-        for (int i = 0; i <=stack.size() ; i++) {
-            result.append(stack.pop());
-        }
-        return result.reverse();
+        
+        while(!st.empty()) result += st.pop();
+        sb = new StringBuilder(result);
+        result = sb.reverse().toString();
+        return result;
     }
-
-    public static void main(String[] args) {
-        String exp = "A+B*(C^D-E)";
-        System.out.println("Infix Expression: " + exp);
-        System.out.println("Prefix Expression: " + infixToPreFix(exp));
+    
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        String exp = scan.nextLine();
+        System.out.println(postfix(exp));
     }
+    
 }
+
+
+/*
+
+    input  => (a-b/c)*(a/k-l) 
+    output => *-a/bc-/akl
+
+*/
