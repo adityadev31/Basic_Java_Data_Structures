@@ -1,40 +1,50 @@
-import java.util.Stack;
-public class PreFixToInFix {
-    public String convert(String expression){
+/*
 
-        Stack<String> stack = new Stack<>();
-        for (int i = expression.length()-1; i >=0 ; i--) {
-            char c = expression.charAt(i);
+same as post2in
+but instead of (op2 + op1) ==> we will be having (op1 + op2)
 
-            if(isOperator(c)){
-                String s1 = stack.pop();
-                String s2 = stack.pop();
-                String temp = "("+s1+c+s2+")";
-                stack.push(temp);
-            }else{
-                stack.push(c+"");
+*/
+
+
+import java.util.*;
+
+public class Main {
+    
+    public static boolean isOperand(char c){
+        return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+    }
+    
+    public static String pre2in(String exp){
+        
+        StringBuilder sb = new StringBuilder(exp);
+        exp = sb.reverse().toString();
+        char[] c = exp.toCharArray();
+        Stack<String> st = new Stack<>();
+        
+        for(int i=0; i<c.length; i++){
+            
+            // ==== step1 ====== operand
+            if(isOperand(c[i])) st.push(c[i] + "");
+            
+            // ==== step2 ====== operator
+            else{
+                String op1 = st.pop();
+                String op2 = st.pop();
+                st.push("(" + op1 + c[i] + op2 + ")");   // same as post2in but (op1 + op2)
             }
         }
-
-        String result=stack.pop();
-
-        return result;
+        return st.peek();
     }
-
-    boolean isOperator(char x) {
-        switch (x) {
-            case '+':
-            case '-':
-            case '/':
-            case '*':
-                return true;
-        }
-        return false;
-    }
-
-    public static void main(String[] args) {
-        String exp = "*-A/BC-/AKL";
-        System.out.println("Prefix Expression: " + exp);
-        System.out.println("Infix Expression: " + new PreFixToInFix().convert(exp));
+    
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        String ip = scan.nextLine();
+        System.out.println(pre2in(ip));
     }
 }
+
+
+/*
+    prefix => *+AB-CD
+    infix  => ((A+B)*(C-D))
+*/
