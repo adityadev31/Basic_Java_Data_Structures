@@ -24,57 +24,46 @@ class Node{
     }
 }
 
-class Pair{
-    Node node;
-    int hd;
-    Pair(Node x, int y){
-        this.node = x;
-        this.hd = y;
-    }
-}
-
-
-
 public class Main {
-    
-    /**************** USING MAPS FOR STORING HD ******************/
-    public static HashMap<Integer, ArrayList<Integer>> map;
-    
-    public static void printMap(HashMap<Integer, ArrayList<Integer>> mp){
-        for(Map.Entry<Integer, ArrayList<Integer>> x : mp.entrySet()){
-            System.out.println(x.getValue());
+
+    static class Pack {
+        Node n;
+        int h;
+        Pack(Node n, int h) {
+            this.n = n;
+            this.h = h;
         }
     }
     
-    public static void insertInMap(HashMap<Integer, ArrayList<Integer>> mp, int key, int value){
-        if(!mp.containsKey(key)) mp.put(key, new ArrayList<>());
-        mp.get(key).add(value);
-    }
-    
-    
-    /************** LEVEL ORDER FOR VERTICAL ********************/
-    public static void levelOrder(Node root){
-        int hd = 0;
-        map = new HashMap<>();
-        Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(root, hd));          // step1 add in que 
-        insertInMap(map, hd, root.data);    // step2 update map
-        
-        while(!q.isEmpty()){
-            Pair x = q.poll();
-            if(x.node.left!=null){
-                q.add(new Pair(x.node.left, x.hd-1));        // step1 add in que 
-                insertInMap(map, x.hd-1, x.node.left.data);  // step2 update map
-            }
-            if(x.node.right!=null){
-                q.add(new Pair(x.node.right, x.hd+1));       // step1 add in que
-                insertInMap(map, x.hd+1, x.node.right.data); // step2 update map
+    // printing vertical
+    public static void verticalOrder(Node root) {
+        if(root == null) return new ArrayList<Integer>();
+        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Queue<Pack> q = new LinkedList<>();
+        q.add(new Pack(root, 0));
+        Pack temp = null;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        while(q.size()!=0) {
+            temp = q.poll();
+            if(temp.h < min) min = temp.h;
+            if(temp.h > max) max = temp.h;
+            if(!map.containsKey(temp.h))
+                map.put(temp.h, new ArrayList<Integer>());
+            map.get(temp.h).add(temp.n.data);
+            if(temp.n.left!=null) 
+                q.add(new Pack(temp.n.left, temp.h-1));
+            if(temp.n.right!=null) 
+                q.add(new Pack(temp.n.right, temp.h+1));
+        }
+
+        // printing from height min -> max
+        for(int i=min; i<=max; i++) {
+            if(map.containsKey(i)) {
+                System.out.println(map.get(i));
             }
         }
-        
-        printMap(map);
-    }
-    
+    }    
     
     /************** MAKE B S T ***************/
     public static Node makeBST(Node root, int x){
