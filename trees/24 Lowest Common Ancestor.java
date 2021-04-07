@@ -33,18 +33,16 @@ Here, the LCA of 1 and 3 will be 2
 */
 
 
-
 class BST
 {   
-    
+    // Returns the LCA of the nodes with values n1 and n2
+    // in the BST rooted at 'root' 
 	Node LCA(Node root, int n1, int n2)
 	{
-        if(root == null) return null;                           // root == null  --> null
-        if(root.data == n1 || root.data == n2) return root;     // root == data  --> root
-        Node left = LCA(root.left, n1, n2);                     // search left subtree
-        Node right = LCA(root.right, n1, n2);                   // search right subtree
-        if(left != null && right != null) return root;          // if both left and right are not null --> root
-        else return (right!=null ? right : left);               // else return the not null one
+        if(root == null) return root;
+        if(root.data<n1 && root.data<n2) return LCA(root.right, n1, n2);
+        else if(root.data>n1 && root.data>n2) return LCA(root.left, n1, n2);
+        return root;
     }
     
 }
